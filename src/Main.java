@@ -1,17 +1,24 @@
+// Задача 1
 import java.util.Scanner;
 public class Main {
-public static void main(String[] args) {
-        long summ = 0;
-        long proizved = 1;
-        final Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Введите число: ");
-        int to = sc.nextInt();
-        for (int i = 1; i <= to; i++) {
-        summ += i;
-        proizved *= i;
-        }
+            int number = sc.nextInt();
+        System.out.println("Сумма чисел от 1 до введенного = " + triangular(number));
+        System.out.printf("Произведение чисел от 1 до введенного = %d", factorial(number));
+        sc.close();
+    }
 
-        System.out.println(summ);
-        System.out.println(proizved);
-}
+    // Сумма чисел до n
+    public static int triangular(int number) {
+        int triangleNumber = (number * (number + 1)) / 2;
+        return triangleNumber;
+    }
+    // Произведение чисел до n
+    public static int factorial(int number) {
+        if (number == 0) return 1;
+        return number * factorial(number-1);
+
+    }
 }
