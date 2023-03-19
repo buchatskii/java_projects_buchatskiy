@@ -1,0 +1,30 @@
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>();
+        Collections.addAll(list, 14, 2, 9, 61, 99, 24, -8, 92);
+        System.out.println(list);
+        enqueue(list, -10);
+        System.out.println("extended list: " + list);
+        System.out.println();
+        Integer firstElm = dequeue(list);
+        System.out.println("первый элемент : " + firstElm + " удален");
+        System.out.println(list);
+        System.out.println();
+        System.out.println("возвращает : " + first(list));
+        System.out.println(list);
+    }
+    public static void enqueue(LinkedList<Integer> list, Integer element) {
+        list.add(element);
+    }
+    public static Integer dequeue(LinkedList<Integer> list) {
+        Integer temp = list.getFirst();
+        list.removeFirst();
+        return temp;
+    }
+    public static Integer first(LinkedList<Integer> list) {
+        return list.getFirst();
+    }
+}
